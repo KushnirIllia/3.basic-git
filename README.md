@@ -3,3 +3,6 @@
 3. git commit -m "comment"         <- додає commit 
 4. git log (--oneline)             <- показує усі записи 
 5. git push [rep_link] [branch_name]
+6. git reset [name_of_file]        <- забрати файл з stage
+7. git diff [name_of_file]         <- подивитися де є зміни 
+8. git reset --hard                <- витирає усі зміни до попереднього коміта 
