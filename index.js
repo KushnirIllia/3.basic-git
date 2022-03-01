@@ -5,25 +5,12 @@ const clock = (container) => {
     const hours = date.getHours()
     const minutes = date.getMinutes()
     const seconds = date.getSeconds()
-    return {
-      hours,
-      minutes,
-      seconds
-    }
+    return { hours, minutes, seconds }
   }
-  const {
-    hours,
-    minutes,
-    seconds
-  } = updateTime()
+  const { hours, minutes, seconds } = updateTime()
   container.textContent = `${hours}:${minutes}:${seconds}`
   setInterval(() => {
-    const {
-      hours,
-      minutes,
-      seconds
-    } = updateTime()
-    
+    const { hours, minutes, seconds } = updateTime()
     container.textContent = `${hours}:${minutes}:${seconds}`
   }, 1000)
 }
