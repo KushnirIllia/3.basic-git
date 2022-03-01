@@ -7,11 +7,24 @@ const clock = (container) => {
     const seconds = date.getSeconds()
     return { hours, minutes, seconds }
   }
-  const { hours, minutes, seconds } = updateTime()
+  function validateTime(functUpdateTime) {
+    const { hours,  minutes, seconds } = functUpdateTime
+    const validateOne = (str) => {
+      if (str < 10) {
+        str = `0${str}` 
+      }
+      return str
+    }
+    return [validateOne(hours), validateOne(minutes), validateOne(seconds)]
+  }
+  validateTime(updateTime())
+  const [ hours,  minutes, seconds ] = validateTime(updateTime())
   container.textContent = `${hours}:${minutes}:${seconds}`
   setInterval(() => {
-    const { hours, minutes, seconds } = updateTime()
+    const [ hours,  minutes, seconds ] = validateTime(updateTime())
     container.textContent = `${hours}:${minutes}:${seconds}`
   }, 1000)
 }
 clock(timerContainer)
+
+console.log('--- CLOCK are working!! ---')
