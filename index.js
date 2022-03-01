@@ -1,3 +1,4 @@
+console.log('--- CLOCK are working!! ---')
 const timerContainer = document.querySelector('#timer')
 const clock = (container) => {
   function updateTime() {
@@ -26,3 +27,4 @@ const clock = (container) => {
   }, 1000)
 }
 clock(timerContainer)
+console.log('--- CLOCK are working!! ---')
